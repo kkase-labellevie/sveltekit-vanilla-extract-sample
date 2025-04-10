@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let label: string = 'ログイン';
+  export let label: string = 'ログイン'
+  import { button } from '../../styles/button/button.css'
 </script>
 
-<button>{label}</button>
+<button class={button}> {label}</button>
