@@ -13,7 +13,10 @@
     primaryButton,
     secondaryButton,
     superPrimaryButton,
+    darkThemeButton,
   } from '../../styles/button/button.css'
+
+  import { darkTheme } from '../../styles/theme.css'
 
   let email = ''
   let password = ''
@@ -37,6 +40,30 @@
     <div class={buttonField}>
       <Button label="プライマリーボタン" buttonClass={superPrimaryButton} />
     </div>
+
+    <div class="light">
+      <div class={buttonField}>
+        <Button
+          label="ライトテーマボタン(selectors)"
+          buttonClass={primaryButton}
+        />
+      </div>
+    </div>
+
+    <div class={darkTheme}>
+      <div class={buttonField}>
+        <Button label="ダークテーマボタン" buttonClass={darkThemeButton} />
+      </div>
+    </div>
+
+    <!-- クラスが適用されていない -->
+    <div class={buttonField}>
+      <Button
+        label="ダークテーマボタン(クラスが適用されていない)"
+        buttonClass={darkThemeButton}
+      />
+    </div>
+
     <div class={buttonField}>
       <Button label="プライマリーボタン(デフォルト)" />
     </div>

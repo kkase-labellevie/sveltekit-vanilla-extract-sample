@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { themeColor } from '../theme.css'
+import { themeColor, darkThemeColor } from '../theme.css'
 
 const baseButton = style({
   color: 'white',
@@ -26,7 +26,13 @@ const baseButton = style({
   ':active': {
     opacity: 0.8,
   },
-  // 擬似クラスはネストできるが、通常のクラスはネストして書くことは不可能
+  // selectorsを利用することでネストして書くことも可能
+  selectors: {
+    '.light &': {
+      backgroundColor: '#E6E0D6',
+      color: 'black',
+    },
+  },
 })
 
 const backgroundPrimary = style({
@@ -39,11 +45,16 @@ const superPrimary = style({
 })
 
 const mockPrimary = style({
-  color: 'black',
+  color: 'pink',
 })
 
 const backgroundSecondary = style({
   backgroundColor: themeColor.color.secondary,
+})
+
+const darkTheme = style({
+  backgroundColor: darkThemeColor.color.backgroundColor,
+  color: darkThemeColor.color.textColor,
 })
 
 export const primaryButton = [baseButton, backgroundPrimary]
@@ -54,3 +65,4 @@ export const superPrimaryButton = [
   //mockPrimary,
 ]
 export const secondaryButton = [baseButton, backgroundSecondary]
+export const darkThemeButton = [baseButton, darkTheme]
