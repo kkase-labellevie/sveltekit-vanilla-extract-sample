@@ -1,19 +1,19 @@
 <script lang="ts">
-  import Input from '../input/Input.svelte'
-  import Checkbox from '../checkbox/Checkbox.svelte'
   import Button from '../button/Button.svelte'
-  // 作成したスタイルファイルをインポート
+  import RecipeVerButton from '../button/RecipeVerButton.svelte'
+
   import {
     mainContainer,
-    title,
     formStyle,
-    formField, // gapを使う場合は不要かもしれないが念のため
-    checkboxField,
     buttonField,
-    fullWidthButton, // Buttonに適用するクラス
-    forgotPasswordContainer,
-    forgotPasswordLink,
-  } from '../../styles/pages/LoginPage.css' // スタイルファイルのパスを確認
+    hrLine,
+  } from '../../styles/pages/LoginPage.css'
+
+  import {
+    primaryButton,
+    secondaryButton,
+    superPrimaryButton,
+  } from '../../styles/button/button.css'
 
   let email = ''
   let password = ''
@@ -23,29 +23,35 @@
     console.log('Email:', email)
     console.log('Password:', password)
     console.log('Auto-login:', autoLogin)
-    // ここで実際のログイン処理を呼び出す
   }
 </script>
 
 <main class={mainContainer}>
-  <h1 class={title}>ログイン</h1>
-
   <form on:submit|preventDefault={handleLogin} class={formStyle}>
-    <div class={formField}>
-      <Input type="email" placeholder="メールアドレス" bindValue={email} />
-    </div>
-    <div class={formField}>
-      <Input type="password" placeholder="パスワード" bindValue={password} />
-    </div>
-    <div class={checkboxField}>
-      <Checkbox bind:checked={autoLogin} />
+    <div class={buttonField}>
+      <Button label="プライマリーボタン" buttonClass={primaryButton} />
     </div>
     <div class={buttonField}>
-      <Button label="ログイン" />
+      <Button label="セカンダリーボタン" buttonClass={secondaryButton} />
+    </div>
+    <div class={buttonField}>
+      <Button label="プライマリーボタン" buttonClass={superPrimaryButton} />
+    </div>
+    <div class={buttonField}>
+      <Button label="プライマリーボタン(デフォルト)" />
+    </div>
+
+    <div class={hrLine}></div>
+
+    <h1>レシピver</h1>
+    <div class={buttonField}>
+      <RecipeVerButton label="プライマリーボタン" variant={'primary'} />
+    </div>
+    <div class={buttonField}>
+      <RecipeVerButton label="セカンダリーボタン" variant={'secondary'} />
+    </div>
+    <div class={buttonField}>
+      <RecipeVerButton label="プライマリーボタン(デフォルト)" />
     </div>
   </form>
-
-  <div class={forgotPasswordContainer}>
-    <a href="/" class={forgotPasswordLink}>パスワードをお忘れですか？</a>
-  </div>
 </main>

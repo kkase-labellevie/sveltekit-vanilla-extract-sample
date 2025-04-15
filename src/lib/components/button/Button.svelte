@@ -1,6 +1,9 @@
 <script lang="ts">
-  export let label: string = 'ログイン'
-  import { button } from '../../styles/button/button.css'
+  import { primaryButton } from '../../styles/button/button.css'
+
+  export let label: string = ''
+  export let buttonClass = primaryButton
+  // デフォルトではprimaryButtonのクラスが適用される
 </script>
 
-<button class={button}> {label}</button>
+<button class={buttonClass}> {label}</button>

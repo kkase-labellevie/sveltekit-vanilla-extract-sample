@@ -1,11 +1,15 @@
 import { style } from '@vanilla-extract/css'
+import { themeColor } from '../theme.css'
 
-export const button = style({
-  display: 'block', // ブロック要素に変更し、親要素の幅を利用できるようにする
-  width: '100%', // ★ 親要素の幅いっぱいに広げる設定を追加
-  padding: '12px 24px', // 上下のパディングは維持
-  backgroundColor: '#C9302C',
+const baseButton = style({
   color: 'white',
+  // color: 'white',　→ error
+  // hoge: 'white', → error
+  // プロパティの型チェック
+
+  display: 'block',
+  width: '100%',
+  padding: '12px 24px',
   border: 'none',
   borderRadius: '0px',
   cursor: 'pointer',
@@ -13,8 +17,6 @@ export const button = style({
   fontWeight: 'bold',
   textAlign: 'center',
   textDecoration: 'none',
-
-  // ★ paddingを含めてwidth: 100%にするため、box-sizingを追加推奨
   boxSizing: 'border-box',
 
   ':hover': {
@@ -24,4 +26,31 @@ export const button = style({
   ':active': {
     opacity: 0.8,
   },
+  // 擬似クラスはネストできるが、通常のクラスはネストして書くことは不可能
 })
+
+const backgroundPrimary = style({
+  backgroundColor: themeColor.color.primary, // =red
+  // themeColorとして別ファイルに定義しておける
+  // bgのような略称は基本的に使えない
+})
+const superPrimary = style({
+  color: 'yellow',
+})
+
+const mockPrimary = style({
+  color: 'black',
+})
+
+const backgroundSecondary = style({
+  backgroundColor: themeColor.color.secondary,
+})
+
+export const primaryButton = [baseButton, backgroundPrimary]
+export const superPrimaryButton = [
+  baseButton,
+  backgroundPrimary,
+  superPrimary,
+  //mockPrimary,
+]
+export const secondaryButton = [baseButton, backgroundSecondary]
