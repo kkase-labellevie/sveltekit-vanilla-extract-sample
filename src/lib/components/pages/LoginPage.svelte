@@ -1,6 +1,7 @@
 <script lang="ts">
   import Button from '../button/Button.svelte'
   import RecipeVerButton from '../button/RecipeVerButton.svelte'
+  import SprinklesVerButton from '../button/SprinklesVerButton.svelte'
 
   import {
     mainContainer,
@@ -70,7 +71,7 @@
 
     <div class={hrLine}></div>
 
-    <h1>レシピver</h1>
+    <h1>レシピ ver</h1>
     <div class={buttonField}>
       <RecipeVerButton label="プライマリーボタン" variant={'primary'} />
     </div>
@@ -79,6 +80,13 @@
     </div>
     <div class={buttonField}>
       <RecipeVerButton label="プライマリーボタン(デフォルト)" />
+    </div>
+
+    <div class={hrLine}></div>
+
+    <h1>Sprinkles ver</h1>
+    <div class={buttonField}>
+      <SprinklesVerButton label="プライマリーボタン(デフォルト)" />
     </div>
   </form>
 </main>
