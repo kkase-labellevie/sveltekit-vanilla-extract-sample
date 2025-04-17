@@ -2,6 +2,7 @@
   import Button from '../button/Button.svelte'
   import RecipeVerButton from '../button/RecipeVerButton.svelte'
   import SprinklesVerButton from '../button/SprinklesVerButton.svelte'
+  import sumiButton from '@smui/button'
 
   import {
     mainContainer,
@@ -87,6 +88,11 @@
     <h1>Sprinkles ver</h1>
     <div class={buttonField}>
       <SprinklesVerButton label="プライマリーボタン(デフォルト)" />
+    </div>
+
+    <h1>SMUI ver</h1>
+    <div class={buttonField}>
+      <sumiButton />
     </div>
   </form>
 </main>
