@@ -2,7 +2,7 @@
   import Button from '../button/Button.svelte'
   import RecipeVerButton from '../button/RecipeVerButton.svelte'
   import SprinklesVerButton from '../button/SprinklesVerButton.svelte'
-  import sumiButton from '@smui/button'
+  import HeadlessUiVerToggle from '../toggle/HeadlessUiVerToggle.svelte'
 
   import {
     mainContainer,
@@ -90,9 +90,12 @@
       <SprinklesVerButton label="プライマリーボタン(デフォルト)" />
     </div>
 
-    <h1>SMUI ver</h1>
+    <div class={hrLine}></div>
+
+    <h1>HeadlessUI Toggle</h1>
+
     <div class={buttonField}>
-      <sumiButton />
+      <HeadlessUiVerToggle />
     </div>
   </form>
 </main>
