@@ -2,7 +2,7 @@
   import Button from '../button/Button.svelte'
   import RecipeVerButton from '../button/RecipeVerButton.svelte'
   import SprinklesVerButton from '../button/SprinklesVerButton.svelte'
-  import HeadlessUiVerToggle from '../toggle/HeadlessUiVerToggle.svelte'
+  import HeadlessUIToggle from '../UIPlugin/HeadlessUIToggle.svelte'
 
   import {
     mainContainer,
@@ -95,7 +95,7 @@
     <h1>HeadlessUI Toggle</h1>
 
     <div class={buttonField}>
-      <HeadlessUiVerToggle />
+      <HeadlessUIToggle />
     </div>
   </form>
 </main>
