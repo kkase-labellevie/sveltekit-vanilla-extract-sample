@@ -2,7 +2,6 @@
   import Button from '../button/Button.svelte'
   import RecipeVerButton from '../button/RecipeVerButton.svelte'
   import SprinklesVerButton from '../button/SprinklesVerButton.svelte'
-  import HeadlessUIToggle from '../UIPlugin/HeadlessUIToggle.svelte'
 
   import {
     mainContainer,
@@ -93,9 +92,6 @@
     <div class={hrLine}></div>
 
     <h1>HeadlessUI Toggle</h1>
-
-    <div class={buttonField}>
-      <HeadlessUIToggle />
-    </div>
+    <a href="/ui-liblary">ui-liblaryサンプルページ</a>
   </form>
 </main>
